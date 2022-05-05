@@ -13,3 +13,8 @@ data "aws_ami" "amzn2" {
 
   owners = ["amazon"] # Canonical
 }
+
+variable "aws_region" {
+  description = "AWS region"
+  default = "ap-northeast-2"
+}
