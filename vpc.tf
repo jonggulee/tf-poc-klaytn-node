@@ -90,6 +90,10 @@ resource "aws_internet_gateway" "test-blockchain-igw" {
 
 resource "aws_eip" "test-blockchain-nat-eip" {
   vpc      = true
+  
+  tags = {
+    Name = "test-blockchain-nat-eip"
+  }
 }
 
 resource "aws_nat_gateway" "test-blockchain-nat" {
