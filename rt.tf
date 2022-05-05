@@ -17,7 +17,6 @@ resource "aws_route_table_association" "test-blockchain-en-pub-2a-rt" {
 }
 
 
-
 resource "aws_route_table" "test-blockchain-sen-rt" {
   vpc_id = aws_vpc.test-blockchain-vpc.id
 
@@ -44,6 +43,11 @@ resource "aws_route_table_association" "test-blockchain-sen-pri-2c-rt" {
 
 resource "aws_route_table" "test-blockchain-scn-rt" {
   vpc_id = aws_vpc.test-blockchain-vpc.id
+  
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_nat_gateway.test-blockchain-nat.id
+  }
 
   tags = {
     Name = "test-blockchain-scn-rt"
