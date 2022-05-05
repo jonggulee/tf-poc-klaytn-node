@@ -1,0 +1,5 @@
+# Directories
+.terraform/
+
+# lock.hcl file
+.terraform.lock.hcl
