@@ -1,7 +1,8 @@
 resource "aws_instance" "test-blockchain-bastion-pub-2a" {
   ami           = data.aws_ami.amzn2.id
   instance_type = "t2.micro"
-  availability_zone = "${var.aws_region}a"
+  # availability_zone = "${var.aws_region}a"
+  availability_zone = "ap-northeast-2a"
 
   iam_instance_profile = aws_iam_instance_profile.amazon_ec2_role_for_s3_iam.id
 
@@ -11,31 +12,33 @@ resource "aws_instance" "test-blockchain-bastion-pub-2a" {
 
   security_groups = [aws_security_group.test-blockchain-bastion-sg.id]
 
+  user_data = file("./userdata.sh")
+
   tags = {
     Name = "test-blockchain-bastion-pub-2a"
   }
 }
 
 
-resource "aws_instance" "test-blockchain-scn-1-pri-2a" {
-  ami           = data.aws_ami.amzn2.id
-  instance_type = "t3.micro"
-  availability_zone = "${var.aws_region}a"
+# resource "aws_instance" "test-blockchain-scn-1-pri-2a" {
+#   ami           = data.aws_ami.amzn2.id
+#   instance_type = "t3.micro"
+#   availability_zone = "${var.aws_region}a"
 
-  iam_instance_profile = aws_iam_instance_profile.amazon_ec2_role_for_s3_iam.id
+#   iam_instance_profile = aws_iam_instance_profile.amazon_ec2_role_for_s3_iam.id
 
-  subnet_id = aws_subnet.test-blockchain-scn-pri-2a.id
-  private_ip = "10.0.5.50"
-  key_name = "test-bastion"
+#   subnet_id = aws_subnet.test-blockchain-scn-pri-2a.id
+#   private_ip = "10.0.5.50"
+#   key_name = "test-bastion"
 
-  user_data = file("./userdata.sh")
+#   user_data = file("./userdata.sh")
 
-  security_groups = [aws_security_group.test-blockchain-sg.id]
+#   security_groups = [aws_security_group.test-blockchain-sg.id]
 
-  tags = {
-    Name = "test-blockchain-scn-1-pri-2a"
-  }
-}
+#   tags = {
+#     Name = "test-blockchain-scn-1-pri-2a"
+#   }
+# }
 
 # resource "aws_instance" "test-blockchain-scn-2-pri-2b" {
 #   ami           = data.aws_ami.amzn2.id

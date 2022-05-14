@@ -1,11 +1,8 @@
 #!/bin/bash
-
-touch test
-
-touch ~/pathtest
+su - ec2-user
 
 # SCN Download
-aws s3 cp s3://klaytn-node-config/ ~/ --recursive
+aws s3 cp s3://klaytn-node-config/ /home/ec2-user/ --recursive
 chmod +x ~/kscn-linux-amd64/bin/kscn*
 
 # Add PATH
