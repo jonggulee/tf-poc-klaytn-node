@@ -1,3 +1,8 @@
+variable "s3_bucket_path" {
+  description = "S3 bucket name"
+  default     = "klaytn-node-config"
+}
+
 data "aws_ami" "amzn2" {
   most_recent = true
 
