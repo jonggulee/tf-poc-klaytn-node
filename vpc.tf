@@ -19,6 +19,16 @@ resource "aws_subnet" "test-blockchain-en-pub-2a" {
   }
 }
 
+resource "aws_subnet" "test-blockchain-en-pub-2c" {
+  vpc_id     = aws_vpc.test-blockchain-vpc.id
+  cidr_block = "10.0.0.128/26"
+  availability_zone = "ap-northeast-2c"
+  map_public_ip_on_launch	= true
+
+  tags = {
+    Name = "test-blockchain-en-pub-2c"
+  }
+}
 
 resource "aws_subnet" "test-blockchain-sen-pri-2a" {
   vpc_id     = aws_vpc.test-blockchain-vpc.id
