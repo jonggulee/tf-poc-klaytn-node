@@ -8,8 +8,11 @@ To create a 4-node Service Chain using Terraform
 
 # Prerequisites
 homi, kscn and key files in AWS S3 Bucket<br/> 
-   Bucket name: {Your bucket name}<br/>
-   homi name: homi-output   key name: key/   kscn name: kscn-linux-amd64   Completion of AWS configuration and credential file settings
+    Bucket name: {Your bucket name}<br/>
+    homi name: homi-output<br/> 
+    key name: key/<br/> 
+    kscn name: kscn-linux-amd64<br/> 
+Completion of AWS configuration and credential file settings
 
 # Getting Started
 Git clone
