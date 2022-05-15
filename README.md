@@ -21,7 +21,7 @@ git clone https://github.com/MZCBBD/test-blockchain-node-terraform.git
 tf apply -auto-approve
 ```
 ## Check the Connection
-You can check block generation status by watching klay.blockNumber. If this number is not 0, the node is working fine.
+You can check block generation status by watching klay.blockNumber on any node. If this number is not 0, the node is working fine.
 ```
 $ kscn attach --datadir ~/data
 Welcome to the Klaytn JavaScript console!
