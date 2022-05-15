@@ -51,6 +51,7 @@ chown -R ec2-user:ec2-user /home/ec2-user/data/klay/nodekey
 # Delete files
 rm -f copy_nodekey.sh
 rm -rf /home/ec2-user/homi-output
+rm -rf /home/ec2-user/key
 
 # Start node
 su - ec2-user "/home/ec2-user/kscn-linux-amd64/bin/kscnd" start
