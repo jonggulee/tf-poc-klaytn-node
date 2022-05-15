@@ -31,6 +31,7 @@ variable "s3_bucket_path" {
 
 Execute the following command on local.
 ```
+$ terraform init
 $ terraform apply -auto-approve
 ```
 ## Check the Connection
