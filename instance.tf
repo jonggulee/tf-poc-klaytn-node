@@ -12,7 +12,7 @@ resource "aws_instance" "test-blockchain-bastion-pub-2c" {
 
   security_groups = [aws_security_group.test-blockchain-bastion-sg.id]
 
-  user_data = file("./userdata/bastion_userdata.sh")
+  user_data = templatefile("./userdata/bastion_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
   tags = {
     Name = "test-blockchain-bastion-pub-2c"
@@ -31,7 +31,7 @@ resource "aws_instance" "test-blockchain-scn-1-pri-2a" {
   private_ip = "10.0.5.50"
   key_name = "test-bastion"
 
-  user_data = file("./userdata/scn_userdata.sh")
+  user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
   security_groups = [aws_security_group.test-blockchain-sg.id]
 
@@ -56,7 +56,7 @@ resource "aws_instance" "test-blockchain-scn-2-pri-2b" {
   private_ip = "10.0.5.100"
   key_name = "test-bastion"
 
-  user_data = file("./userdata/scn_userdata.sh")
+  user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
   security_groups = [aws_security_group.test-blockchain-sg.id]
   root_block_device {
@@ -80,7 +80,7 @@ resource "aws_instance" "test-blockchain-scn-3-pri-2c" {
   private_ip = "10.0.5.150"
   key_name = "test-bastion"
 
-  user_data = file("./userdata/scn_userdata.sh")
+  user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
   security_groups = [aws_security_group.test-blockchain-sg.id]
   
@@ -105,7 +105,7 @@ resource "aws_instance" "test-blockchain-scn-4-pri-2d" {
   private_ip = "10.0.5.200"
   key_name = "test-bastion"
 
-  user_data = file("./userdata/scn_userdata.sh")
+  user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
   security_groups = [aws_security_group.test-blockchain-sg.id]
   
