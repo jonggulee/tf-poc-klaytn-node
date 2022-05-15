@@ -4,21 +4,33 @@
 To create a 4-node Service Chain using Terraform
 
 # Architecture
-<img width="986" alt="스크린샷 2022-05-15 오후 7 21 52" src="https://user-images.githubusercontent.com/102651396/168467999-283f004e-b86e-45a2-9572-b08c5f8fab17.png">
+<img width="988" alt="스크린샷 2022-05-15 오후 11 57 20" src="https://user-images.githubusercontent.com/102651396/168479367-19ee7c19-9f42-45e6-9d1f-7da1c3c6abfb.png">
 
 # Prerequisites
 homi, kscn and key files in AWS S3 Bucket
-  Bucket name: klaytn-node-config
+  Bucket name: {Your bucket name}
   homi name: homi-output
   key name: key/
   kscn name: kscn-linux-amd64
 Completion of AWS configuration and credential file settings
 
 # Getting Started
+Git clone
+```
+$ git clone https://github.com/MZCBBD/test-blockchain-node-terraform.git
+```
+
+Open data.tf in a text editor then update the S3 bucket name
+```
+variable "s3_bucket_path" {
+  description = "S3 bucket name"
+  default     = "{Your bucket name}"
+}
+```
+
 Execute the following command on local.
 ```
-git clone https://github.com/MZCBBD/test-blockchain-node-terraform.git
-tf apply -auto-approve
+$ terraform apply -auto-approve
 ```
 ## Check the Connection
 You can check block generation status by watching klay.blockNumber on any node. If this number is not 0, the node is working fine.
