@@ -5,7 +5,7 @@ rm -f /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 # SCN Download
-aws s3 cp s3://klaytn-node-config/ /home/ec2-user/ --recursive
+aws s3 cp s3://${s3_bucket_path}/ /home/ec2-user/ --recursive
 chown -R ec2-user:ec2-user /home/ec2-user/kscn-linux-amd64
 chown -R ec2-user:ec2-user /home/ec2-user/homi-output
 chmod +x /home/ec2-user/kscn-linux-amd64/bin/kscn*
