@@ -1,0 +1,40 @@
+{
+    "config": {
+        "chainId": 1000,
+        "istanbulCompatibleBlock": 0,
+        "londonCompatibleBlock": 0,
+        "ethTxTypeCompatibleBlock": 0,
+        "istanbul": {
+            "epoch": 3600,
+            "policy": 0,
+            "sub": 22
+        },
+        "unitPrice": 0,
+        "deriveShaImpl": 2,
+        "governance": null
+    },
+    "timestamp": "0x627f7e86",
+    "extraData": "0x0000000000000000000000000000000000000000000000000000000000000000f89af85494623f8eca84243f6270a8bb0b300f15e91f4a224094ede0aea78e79f5808a9590c61a47c52e89d2a2d2948c485008bfeb6dfd6ccba82407dce101566a7c9394113b379938c98aab26826f36a0055208aef6c7bdb8410000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c0",
+    "governanceData": null,
+    "blockScore": "0x1",
+    "alloc": {
+        "113b379938c98aab26826f36a0055208aef6c7bd": {
+            "balance": "0x2540be400"
+        },
+        "160964fe74fbc2e4bf56db3ead36357a1d2f1e4a": {
+            "balance": "0x2540be400"
+        },
+        "623f8eca84243f6270a8bb0b300f15e91f4a2240": {
+            "balance": "0x2540be400"
+        },
+        "8c485008bfeb6dfd6ccba82407dce101566a7c93": {
+            "balance": "0x2540be400"
+        },
+        "ede0aea78e79f5808a9590c61a47c52e89d2a2d2": {
+            "balance": "0x2540be400"
+        }
+    },
+    "number": "0x0",
+    "gasUsed": "0x0",
+    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
