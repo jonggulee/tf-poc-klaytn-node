@@ -1,7 +1,7 @@
 # test-blockchain-node-terraform
 
 # Purpose
-To create a 4-node Service Chain using Terraform
+To create a klaytn 4-node Service Chain using Terraform
 
 # Architecture
 <img width="988" alt="스크린샷 2022-05-15 오후 11 57 20" src="https://user-images.githubusercontent.com/102651396/168479367-19ee7c19-9f42-45e6-9d1f-7da1c3c6abfb.png">
@@ -26,6 +26,19 @@ Open data.tf in a text editor then update the S3 bucket name
 variable "s3_bucket_path" {
   description = "S3 bucket name"
   default     = "{Your bucket name}"
+}
+```
+
+Open data.tf in a text editor then update key pair name
+```
+variable "key_bastion" {
+  description = "bastion keypair"
+  default     = "{Your key pair}"
+}
+
+variable "key_scn" {
+  description = "scn keypair"
+  default     = "{Your key pair}"
 }
 ```
 
