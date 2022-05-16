@@ -7,7 +7,7 @@ resource "aws_instance" "test-blockchain-bastion-pub-2c" {
   iam_instance_profile = aws_iam_instance_profile.amazon_ec2_role_for_s3_iam.id
 
   subnet_id = aws_subnet.test-blockchain-en-pub-2c.id
-  key_name = "test-bastion"
+  key_name = "${var.key_bastion}"
   associate_public_ip_address = true
 
   security_groups = [aws_security_group.test-blockchain-bastion-sg.id]
@@ -29,7 +29,7 @@ resource "aws_instance" "test-blockchain-scn-1-pri-2a" {
 
   subnet_id = aws_subnet.test-blockchain-scn-pri-2a.id
   private_ip = "10.0.5.50"
-  key_name = "test-bastion"
+  key_name = "${var.key_scn}"
 
   user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
@@ -54,7 +54,7 @@ resource "aws_instance" "test-blockchain-scn-2-pri-2b" {
 
   subnet_id = aws_subnet.test-blockchain-scn-pri-2b.id
   private_ip = "10.0.5.100"
-  key_name = "test-bastion"
+  key_name = "${var.key_scn}"
 
   user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
@@ -78,7 +78,7 @@ resource "aws_instance" "test-blockchain-scn-3-pri-2c" {
 
   subnet_id = aws_subnet.test-blockchain-scn-pri-2c.id
   private_ip = "10.0.5.150"
-  key_name = "test-bastion"
+  key_name = "${var.key_scn}"
 
   user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 
@@ -103,7 +103,7 @@ resource "aws_instance" "test-blockchain-scn-4-pri-2d" {
 
   subnet_id = aws_subnet.test-blockchain-scn-pri-2d.id
   private_ip = "10.0.5.200"
-  key_name = "test-bastion"
+  key_name = "${var.key_scn}"
 
   user_data = templatefile("./userdata/scn_userdata.sh", { s3_bucket_path = "${var.s3_bucket_path}" })
 

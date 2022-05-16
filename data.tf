@@ -3,6 +3,16 @@ variable "s3_bucket_path" {
   default     = "klaytn-node-config"
 }
 
+variable "key_bastion" {
+  description = "bastion keypair"
+  default     = "test-bastion"
+}
+
+variable "key_scn" {
+  description = "scn keypair"
+  default     = "test-bastion"
+}
+
 data "aws_ami" "amzn2" {
   most_recent = true
 
