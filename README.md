@@ -21,16 +21,13 @@ Git clone
 $ git clone https://github.com/MZCBBD/test-blockchain-node-terraform.git
 ```
 
-Open data.tf in a text editor then update the S3 bucket name
+Open data.tf in a text editor then update the S3 bucket name and key pair
 ```
 variable "s3_bucket_path" {
   description = "S3 bucket name"
   default     = "{Your bucket name}"
 }
-```
 
-Open data.tf in a text editor then update key pair name
-```
 variable "key_bastion" {
   description = "bastion keypair"
   default     = "{Your key pair}"
